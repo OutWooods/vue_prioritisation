@@ -1,11 +1,23 @@
 <template>
-  <div class="point bg-white ml-5 mt-5">
+  <div class="point ml-5 mt-5" @click="mark" :style="{backgroundColor: colour}">
   </div>
 </template>
 
 <script>
   export default {
-    name: "Horizontal"
+    name: "Horizontal",
+
+    data() {
+      return {
+        colour: 'white',
+      }
+    },
+
+    methods: {
+      mark() {
+         this.colour = 'red';
+      }
+    }
   }
 </script>
 
