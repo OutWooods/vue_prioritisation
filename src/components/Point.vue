@@ -1,5 +1,5 @@
 <template>
-  <div class="point ml-5 mt-5" @click="mark" :style="{backgroundColor: colour}">
+  <div class="point p-3" @click="mark" :style="{backgroundColor: colour}">
   </div>
 </template>
 
@@ -7,15 +7,16 @@
   export default {
     name: "Horizontal",
 
-    data() {
-      return {
-        colour: 'white',
+    props: {
+      colour: {
+        required: true,
+        type: String,
       }
     },
 
     methods: {
       mark() {
-         this.colour = 'red';
+        this.colour = 'pink';
       }
     }
   }

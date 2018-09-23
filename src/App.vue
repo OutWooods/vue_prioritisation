@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <h1>hello</h1>
-    <matrix></matrix>
+    <div class="flex">
+      <matrix></matrix>
+      <div></div>
+    </div>
     <button @click="getJobs">click me</button>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container flex-col bg-blue-dark ">
-      <div class="text-white ml-10 flex" v-for="row in rows" :key="row">
-        <point v-for="col in collumns" :key="col"></point>
+    <div class="flex-col pb-5 pr-5 ml-16">
+      <div class="flex" v-for="row in rows" :key="row">
+        <point v-for="col in collumns" :key="col" :colour="whatColour(row, col)"></point>
       </div>
     </div>
   </div>
@@ -18,16 +18,21 @@
 
     data() {
       return {
-        collumns: 8,
-        rows: 8
+        collumns: 10,
+        rows: 10,
       }
     },
+
+    methods: {
+      whatColour(a, b) {
+        if(a <= this.rows/2 && b > this.collumns/2) { return 'red' }
+        if(a > this.rows/2 && b > this.collumns/2) { return 'orange' }
+        if(a <= this.rows/2 && b <= this.collumns/2) { return 'green' }
+        return 'grey';
+      }
+    }
   }
 </script>
 
 <style scoped>
-  .container {
-    width: 500px;
-    height: 600px;
-  }
 </style>
