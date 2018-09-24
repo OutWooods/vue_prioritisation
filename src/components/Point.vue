@@ -1,5 +1,5 @@
 <template>
-  <div class="point p-3" @click="mark" :style="{backgroundColor: colour}">
+  <div class="point p-3" @click="toggleMarked" :style="{backgroundColor: bgColour}">
   </div>
 </template>
 
@@ -14,9 +14,21 @@
       }
     },
 
+    data() {
+      return {
+        clicked: false
+      }
+    },
+
+    computed: {
+      bgColour() {
+         return  this.clicked ? 'pink' : this.colour;
+      }
+    },
+
     methods: {
-      mark() {
-        this.colour = 'pink';
+      toggleMarked() {
+        this.clicked = !this.clicked;
       }
     }
   }
