@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex-col pb-5 pr-5 ml-16">
+    <div class="flex-col pb-5 pr-5 ml-16" @click="getCoordinates" id="tester">
       <div class="flex" v-for="row in rows" :key="row">
         <point v-for="col in collumns" :key="col" :colour="whatColour(row, col)"></point>
       </div>
@@ -29,6 +29,14 @@
         if(a > this.rows/2 && b > this.collumns/2) { return 'orange' }
         if(a <= this.rows/2 && b <= this.collumns/2) { return 'green' }
         return 'grey';
+      },
+
+
+      getCoordinates(event) {
+        const offset =  document.getElementById('tester').getClientRects();
+        console.log(offset);
+        console.log(event.clientX - offset[0].x);
+        console.log(event.clientY - offset[0].y);
       }
     }
   }
