@@ -1,42 +1,18 @@
 <template>
-  <div class="point p-3" @click="toggleMarked" :style="{backgroundColor: bgColour}">
+  <div class="thing bg-green-lightest">
   </div>
 </template>
 
 <script>
+
   export default {
-    name: "Horizontal",
-
-    props: {
-      colour: {
-        required: true,
-        type: String,
-      }
-    },
-
-    data() {
-      return {
-        clicked: false
-      }
-    },
-
-    computed: {
-      bgColour() {
-         return  this.clicked ? 'pink' : this.colour;
-      }
-    },
-
-    methods: {
-      toggleMarked() {
-        this.clicked = !this.clicked;
-      }
-    }
+    name: "point",
   }
 </script>
 
 <style scoped>
-  .point {
-    height: 5px;
-    width: 5px;
-  }
+ .thing {
+   width: 10px;
+   height: 10px;
+ }
 </style>

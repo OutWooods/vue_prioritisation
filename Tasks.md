@@ -13,6 +13,7 @@
 -[ ] You can mark a task as done (you log when it is done)
 
 
+Change to absolute positioning for it to work 
 
 Future validations jobs
 -[ ] Nothing that is incomplete can have identical X and Y values (as a pair.)
