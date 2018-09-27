@@ -1,10 +1,16 @@
 <template>
   <div>
     <div class="parent bg-purple-dark">
-        <div class="bg-purple-dark" @click="getCoordinates" id="tester">
-          <point v-for="coord in coordinates" :style='{ left: formatXCoord(coord.x), top: formatYCoord(coord.y)}'
-                 class="coord" :key="coord.id"></point>
-        </div>
+      <div id="tester"
+           class="bg-purple-dark"
+           @click="getCoordinates"
+      >
+        <point class="coord"
+               :key="coord.id"
+               v-for="coord in coordinates"
+               :style='{ left: formatXCoord(coord.x), top: formatYCoord(coord.y)}'
+        ></point>
+      </div>
     </div>
   </div>
 </template>
@@ -36,27 +42,10 @@
         .then((response) => {
           this.coordinates = response.data.jobs;
         })
-        .catch((error) => {
-          console.log(error);
-        });
     },
 
     methods: {
-      whatColour(a, b) {
-        if (a <= this.rows / 2 && b > this.collumns / 2) {
-          return 'red'
-        }
-        if (a > this.rows / 2 && b > this.collumns / 2) {
-          return 'orange'
-        }
-        if (a <= this.rows / 2 && b <= this.collumns / 2) {
-          return 'green'
-        }
-        return 'grey';
-      },
-
       formatXCoord(x) {
-
         return `${((((x * 20)) + this.offset.x) - 5)}px`;
       },
 
@@ -65,9 +54,8 @@
       },
 
       getCoordinates(event) {
-        const offset = document.getElementById('tester').getClientRects();
-        const x = ((event.clientX - offset[0].x) / 20);
-        const y = (10 - ((event.clientY - offset[0].y) / 20))
+        const x = ((event.clientX - this.offset.x) / 20);
+        const y = (10 - ((event.clientY - this.offset.y) / 20))
         this.coordinates.push({ x: x, y: y, index: Math.random() });
       }
     }
