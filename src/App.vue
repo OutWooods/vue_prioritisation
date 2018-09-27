@@ -2,15 +2,15 @@
   <div id="app">
     <h1>hello</h1>
     <div class="flex">
-      <matrix></matrix>
+      <div class="ml-16 p-5 parent">
+        <matrix></matrix>
+      </div>
       <div></div>
     </div>
-    <button @click="getJobs">click me</button>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
   import './assets/css/main.css'
   import Matrix from './components/Matrix.vue'
 
@@ -26,17 +26,7 @@
     },
     created() {
     },
-    methods: {
-      getJobs() {
-        axios.get('http://backend_prioritisation.test/api/jobs')
-          .then((response) => {
-            this.jobs = response.data.jobs;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    }
+    methods: {}
   }
 </script>
 
@@ -48,5 +38,10 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+  }
+
+  .parent{
+    height: 230px;
+    width: 230px;
   }
 </style>

@@ -1,14 +1,17 @@
 <template>
   <div>
-    <div class="flex-col bg-purple-dark pb-5 pr-5 ml-16" @click="getCoordinates" id="tester">
-      <point v-for="coord in coordinates" :style='{ left: formatXCoord(coord.x), top: formatYCoord(coord.y)}'
-             class="coord" :key="coord.index"></point>
+    <div class="parent bg-purple-dark">
+        <div class="bg-purple-dark" @click="getCoordinates" id="tester">
+          <point v-for="coord in coordinates" :style='{ left: formatXCoord(coord.x), top: formatYCoord(coord.y)}'
+                 class="coord" :key="coord.id"></point>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
 
+  import axios from 'axios'
   import Point from './Point.vue';
 
   export default {
@@ -20,6 +23,7 @@
 
     data() {
       return {
+        jobs: {},
         coordinates: [],
         loading: true,
         offset: {},
@@ -28,8 +32,13 @@
 
     mounted() {
       this.offset = document.getElementById('tester').getClientRects()[0];
-      this.coordinates.push({ x: 10, y: 10, index: 999 });
-      console.log(this.offset);
+      axios.get('http://backend_prioritisation.test/api/jobs')
+        .then((response) => {
+          this.coordinates = response.data.jobs;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
 
     methods: {
@@ -69,6 +78,13 @@
   #tester {
     width: 210px;
     height: 210px;
+  }
+
+  .parent {
+    width: 220px;
+    height: 220px;
+    padding-top: 5px;
+    padding-left: 5px;
   }
 
   .coord {
