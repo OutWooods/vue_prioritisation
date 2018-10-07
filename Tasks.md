@@ -1,12 +1,20 @@
 -[x] Get a colour change on clicks
 -[x] Link it to a db
--[ ] Have four different colours for 10 X 10 Grid
+-[x] Have four different colours for 10 X 10 Grid
 -[x] Show a black dot for a task that exists
--[ ] Make an API for incomplete jobs 
+-[x] Make an API for incomplete jobs 
 -[x] On click/hover show details of the task
 
--[ ] Add axios
+-[x] Add axios
 -[ ] Add login
+  -[ ] Send login details to the endpoint laravel login
+  -[ ] Add validation on the Vue side to the login
+  -[ ] Store the key (in local storage for now)
+  -[ ] Add error messages
+  -[ ] Move to a jobs page on successful login
+ 
+(backend add a users jobs path) 
+   
 -[ ] Tidy up js at some point
 
 -[ ] Make a click = adding a new task (unranked) 
