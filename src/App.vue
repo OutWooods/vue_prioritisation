@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <p class="bg-">Hello</p>
     <router-view/>
   </div>
 </template>
 
 <script>
+import './assets/css/main.css';
+
 export default {
   name: 'App',
 };
