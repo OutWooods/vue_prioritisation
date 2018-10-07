@@ -5,6 +5,10 @@
 -[ ] Make an API for incomplete jobs 
 -[x] On click/hover show details of the task
 
+-[ ] Add axios
+-[ ] Add login
+-[ ] Tidy up js at some point
+
 -[ ] Make a click = adding a new task (unranked) 
 -[ ] Make a click = adding a new task, which will always appear on that point on the grid
 -[ ] When a task is made, it is logged
