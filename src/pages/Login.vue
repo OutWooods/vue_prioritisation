@@ -1,12 +1,22 @@
 <template>
   <div>
     <h1> Welcome to the login page!</h1>
+    <p  class="text-red"
+        v-show="errors.backend"
+        v-text="errors.backend"
+    >
+      </p>
     <div>
-      <label for="email">Email:</label>
-      <input id="email"
+      <label for="username">Email:</label>
+      <input id="username"
              type="email"
              name="username"
              v-model="details.username">
+      <span class="text-red"
+            v-show="errors.username"
+            v-text="errors.username"
+      >
+      </span>
     </div>
     <div>
       <label for="password">Password:</label>
@@ -14,6 +24,11 @@
              type="password"
              name="password"
              v-model="details.password">
+      <span class="text-red"
+            v-show="errors.password"
+            v-text="errors.password"
+      >
+      </span>
 
     </div>
     <button @click="login"
@@ -37,19 +52,36 @@ export default {
         username: '',
         password: '',
       },
+      errors: {},
     };
   },
 
   methods: {
     login() {
-      console.log(process.env.ROOT_API);
-      axios.post(`${process.env.ROOT_API}/login`, this.details)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.loginValidation();
+      if (Object.keys(this.errors).length === 0 && this.errors.constructor === Object) {
+        axios.post(`${process.env.ROOT_API}/login`, this.details)
+          .then((response) => {
+          })
+          .catch((error) => {
+            this.errors = { backend: error.response.data };
+          });
+      }
+    },
+
+    loginValidation() {
+      const validation = {};
+      if (this.details.username.search('@') === -1) {
+        console.log('hey!');
+        validation.username = 'You must have a valid email';
+      }
+      if (this.details.username === '') {
+        validation.username = 'You cannot have a blank username';
+      }
+      if (this.details.password === '') {
+        validation.password = 'You cannot have a blank password';
+      }
+      this.errors = validation;
     },
   },
 };

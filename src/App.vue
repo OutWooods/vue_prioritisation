@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <p class="bg-">Hello</p>
     <router-view/>
   </div>
 </template>

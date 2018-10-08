@@ -8,7 +8,7 @@
 -[x] Add axios
 -[ ] Add login
   -[x] Send login details to the endpoint laravel login
-  -[ ] Store the web address as a constant on the website
+  -[x] Store the web address as a constant on the website
   -[ ] Add validation on the Vue side to the login
   -[ ] Store the key (in local storage for now)
   -[ ] Add error messages
