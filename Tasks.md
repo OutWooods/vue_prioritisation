@@ -7,24 +7,45 @@
 
 -[x] Add axios
 -[ ] Add login
-  -[ ] Send login details to the endpoint laravel login
+  -[x] Send login details to the endpoint laravel login
+  -[ ] Store the web address as a constant on the website
   -[ ] Add validation on the Vue side to the login
   -[ ] Store the key (in local storage for now)
   -[ ] Add error messages
   -[ ] Move to a jobs page on successful login
   -[ ] Add a nav bar
   
-(backend add a users jobs path) 
+-[ ] Show specific users jobs
+  -[ ] Backend, users link to a specific job 
+  -[ ] Have an api that returns all a users personal jobs, which are incomplete
+  -[ ] Put the frontend back end in to show jobs  
+  -[ ] Test its all  working
 
- -[ ] Add frontend back for showing current jobs (in archive folder) (only incomplete ones)
- -[ ] Test its all  working
+-[ ] Investigate security
+ -[ ] Do I need to store tokens in sessions or will local storage do? 
+ -[ ] Is the CORS security in passport working?
+
+-[ ] Add a new task 
  -[ ] Add a new task endpoint 
+ -[ ] Add the front end for a new task
+
+-[ ] Delete a task 
+ -[ ] Add a delete task endpoint 
+ -[ ] Add the front end for deleting a new task
  
--[ ] BACKEND NEEDED - Make a click = adding a new task (unranked)  
--[ ] BACKEND NEEDED You can delete a task
--[ ] BACKEND NEEDED You can mark a task as done (you log when it is done)
+-[ ] Mark a task as complete
+ -[ ] Backend
+ -[ ] Front end
 
-
+-[ ] Edit details of a task 
+ -[ ] Backend 
+ -[ ] Frontend
+ 
+ -[ ] Guest Homepage 
+  -[ ] Nav bar (variable on login status)
+ 
+ -----------          MVP           -----------
+   
 Decide on how I want the grid to work, currently not super happy on the solution where the edges are not clear. 
 
 Change to absolute positioning for it to work 
