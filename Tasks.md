@@ -12,17 +12,17 @@
   -[ ] Store the key (in local storage for now)
   -[ ] Add error messages
   -[ ] Move to a jobs page on successful login
- 
+  -[ ] Add a nav bar
+  
 (backend add a users jobs path) 
-   
--[ ] Tidy up js at some point
 
--[ ] Make a click = adding a new task (unranked) 
--[ ] Make a click = adding a new task, which will always appear on that point on the grid
--[ ] When a task is made, it is logged
--[ ] If there is something already there, view the saved task 
--[ ] You can delete a task
--[ ] You can mark a task as done (you log when it is done)
+ -[ ] Add frontend back for showing current jobs (in archive folder) (only incomplete ones)
+ -[ ] Test its all  working
+ -[ ] Add a new task endpoint 
+ 
+-[ ] BACKEND NEEDED - Make a click = adding a new task (unranked)  
+-[ ] BACKEND NEEDED You can delete a task
+-[ ] BACKEND NEEDED You can mark a task as done (you log when it is done)
 
 
 Decide on how I want the grid to work, currently not super happy on the solution where the edges are not clear. 
